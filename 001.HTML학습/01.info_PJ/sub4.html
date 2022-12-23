@@ -1,45 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            .pnews table{
-                border: 1px solid black;
-                margin: 10px auto;
-            }
-            
-
-            .pnews table td:first-child{
-                width: 50px;
-                text-align: center;
-                background-color: gray;
-            }
-
-            .pnews td:nth-child(2){
-                padding-left: 10px;
-            }
-
-            .pnews img{
-                height: 70px;
-                padding: 20px 0;
-                vertical-align: middle;
-
-            }
-
-            .pnews td:last-child{
-                background-color: red;
-                padding-left: 50px;
-            }
-            .pnews table{
-                border-collapse:collapse;
-            }
-
-            .pnews tr + tr td{
-                border-top: 2px solid yellow;
-            }
-                
-            
-
-        </style>
         <!-- meta: description 사이트설명 -->
         <meta name="description" content="네이버 요약뉴스,최신뉴스,정치,경제,사회,IT/과학,연예" />
         <!-- meta: charset 필수 인코딩설정 -->
@@ -135,16 +96,18 @@
             </section>
 
             <!-- 구분선 : hr -->
-            <hr />
+            <!-- <hr /> -->
             <article class="desc">
                 <h5>주해</h5>
-                ① 다누리는 한국항공우주연구원이 개발하여 2022년 8월 5일에 발사한 대한민국 최초의 달 궤도 탐사선이다. 달 궤도를 돌며 달을 탐사하는 것을 목표로 한다. 성공한다면 대한민국은 세계 7번째 달 탐사국 반열에 오른다.
-                <br />
-                <!-- break 요소 : 인라인 줄바꿈요소 -->
-                ② 달의 반지름은 지구 반지름의 약 4분의 1이며, 질량은 지구 질량의 1/81.3이고, 달과 지구의 공통 중심은 지구 내부에 있다. 달 궤도의 반지름은 38만 4,400km이며, 이것이 달과의 평균 거리가 된다.
+                <div>
+                    ① 다누리는 한국항공우주연구원이 개발하여 2022년 8월 5일에 발사한 대한민국 최초의 달 궤도 탐사선이다. 달 궤도를 돌며 달을 탐사하는 것을 목표로 한다. 성공한다면 대한민국은 세계 7번째 달 탐사국 반열에 오른다.
+                    <br />
+                    <!-- break 요소 : 인라인 줄바꿈요소 -->
+                    ② 달의 반지름은 지구 반지름의 약 4분의 1이며, 질량은 지구 질량의 1/81.3이고, 달과 지구의 공통 중심은 지구 내부에 있다. 달 궤도의 반지름은 38만 4,400km이며, 이것이 달과의 평균 거리가 된다.
+                </div>
             </article>
 
-            <hr />
+            <!-- <hr /> -->
 
             <!-- 인용블록 영역 -->
             <article class="qb">
@@ -155,7 +118,7 @@
                 </blockquote>
             </article>
 
-            <hr />
+            <!-- <hr /> -->
 
             <!-- 2-5.기자정보 -->
             <div class="rpt">윤현성 기자(hsyhs@newsis.com)</div>
@@ -164,7 +127,7 @@
                 <a href="https://n.news.naver.com/mnews/article/003/0011594397?sid=105" target="_blank"> 기사원문 </a>
             </h5>
 
-            <hr />
+            <!-- <hr /> -->
             <!-- 오늘의 작품 & 느낌 -->
             <article class="work">
                 <h3>오늘의 작품 &amp; 느낌</h3>
@@ -278,7 +241,12 @@
 
             <!-- 
                 [ 테이블 요소 : table ]
-                table > tr > td
+                table > tbody > tr > td
+
+                -> tbody는 안써도 브라우저가 그려준다!
+                -> 직계자식으로 선택할 경우
+                table > tr 로 선택하면 적용되지 않는
+                이유가 바로 이것이다!!!(주의!)
                 ___________________
 
                 table : 테이블 박스 부모요소
@@ -290,6 +258,8 @@
              <article class="pnews">
                 <h3>사진뉴스</h3>
                 <table>
+                <!-- <table border="1"> -->
+                    <!-- border속성은 테스트용임 -->
                     <tr>
                         <td>1</td>
                         <td>
