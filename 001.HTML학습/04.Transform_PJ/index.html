@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼 연습</title>
+    <style>
+        body{
+            background: url(./images/bg-main.jpg)
+            no-repeat fixed center top/cover;
+        }
+        .tit{
+            text-align: center;
+            border-radius: 50px;
+            background-color: rgba(0, 0, 0, 0.404);
+            color: #fff;
+            line-height: 100px;
+            font-size: 50px;
+            text-shadow: 2px 0 #000,
+            -2px 0 #000,
+            0 2px #000,
+            0 -2px #000;
+
+        }
+
+        .cont{
+            max-width: 1500px;
+            border: 10px solid lime;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 100px auto;
+        }
+
+        .cont::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .cont>div{
+            float: left;
+            width: 20%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+        /* float를 했을때 왜 컨테이너가 작아지는지 모르겠음
+         */
+
+        .cont>div>img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: transform 0.6s;
+        }
+
+        #trans1:hover img{
+            transform: rotateY(180deg);
+            filter: grayscale(100%);
+        }
+
+        #trans2:hover img{
+            transform: rotateX(180deg);
+            filter: blur(2px);
+        }
+
+
+        #trans3:hover img{
+            transform: translate(100%);
+        }
+
+        #trans4:hover img{
+            transform: translateY(100%);
+        }
+
+        #trans5:hover img{
+            transform: translate(-120px, 100px)
+        }
+
+        #trans6:hover img{
+            transform: rotate(5478deg);
+            transition-duration: 10s; 
+
+            
+        }
+
+        #trans6 img{
+            transform-origin: 50px 170px;
+            
+        }
+
+        #trans7:hover img{
+            transform: skew(-30deg, 45deg)
+        }
+
+        #trans9:hover img{
+            transform: scale(5) translate(-200%, -100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
+            transition-duration: 20s;
+        }
+
+        #trans10{
+            width: 200px;
+            height: 200px;
+            text-align: left;
+            outline: 2px dashed lime;
+            overflow: hidden;
+        }
+
+        #trans10 img{
+            position: absolute;
+
+            
+        }
+
+        #trans10 img:last-child{
+            transform: rotateY(0deg);
+            transition: 0.4s ease-in 0.4s;
+
+        }
+
+        #trans10:hover img:last-child{
+            transform: rotateY(90deg);
+            transition: 0.4s ease-in;
+        }
+
+        #trans10 img:first-child{
+            transform: rotateY(90deg);
+
+        }
+
+        #trans10:hover img:first-child{
+            transform: rotateY(0deg);
+            transition: .4s ease-out .4s;
+        }
+        
+
+
+
+        
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1 class="tit">트랜스폼 연습</h1>
+    <div class="cont">
+        <div id="trans1"><img src="images/cast01.jpg" alt="캐릭터"></div>
+        <div id="trans2"><img src="images/cast02.jpg" alt="캐릭터"></div>
+        <div id="trans3"><img src="images/cast03.jpg" alt="캐릭터"></div>
+        <div id="trans4"><img src="images/cast04.jpg" alt="캐릭터"></div>
+        <div id="trans5"><img src="images/cast05.jpg" alt="캐릭터"></div>
+        <div id="trans6"><img src="images/cast01.jpg" alt="캐릭터"></div>
+        <div id="trans7"><img src="images/cast02.jpg" alt="캐릭터"></div>
+        <div id="trans8"><img src="images/cast03.jpg" alt="캐릭터"></div>
+        <div id="trans9"><img src="images/cast04.jpg" alt="캐릭터"></div>
+        <div id="trans10"><img src="images/cast02.jpg" alt="캐릭터">
+            <img src="images/cast03.jpg" alt="캐릭터"></div>
+    </div>
+</body>
+</html>
